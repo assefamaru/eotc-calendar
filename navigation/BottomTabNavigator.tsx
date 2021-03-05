@@ -9,7 +9,9 @@ import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import TabThreeScreen from '../screens/TabThreeScreen';
 import TabFourScreen from '../screens/TabFourScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList, TabFourParamList } from '../types';
+import TabFiveScreen from '../screens/TabFiveScreen';
+import { BottomTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList, TabFourParamList, TabFiveParamList } from '../types';
+import { BorderlessButton } from 'react-native-gesture-handler';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -48,12 +50,19 @@ export default function BottomTabNavigator() {
         name="TabThree"
         component={TabThreeNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="rotate-cw" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="command" color={color} />,
         }}
       />
       <BottomTab.Screen
         name="TabFour"
         component={TabFourNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="bell" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="TabFive"
+        component={TabFiveNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="settings" color={color} />,
         }}
@@ -63,7 +72,7 @@ export default function BottomTabNavigator() {
 }
 
 function TabBarIcon(props: { name: React.ComponentProps<typeof Feather>['name']; color: string }) {
-  return <Feather size={20} {...props} />;
+  return <Feather size={22} {...props} />;
 }
 
 const TabOneStack = createStackNavigator<TabOneParamList>();
@@ -121,5 +130,19 @@ function TabFourNavigator() {
         options={{ headerShown: false }}
       />
     </TabFourStack.Navigator>
+  );
+}
+
+const TabFiveStack = createStackNavigator<TabFiveParamList>();
+
+function TabFiveNavigator() {
+  return (
+    <TabFiveStack.Navigator>
+      <TabFiveStack.Screen
+        name="TabFiveScreen"
+        component={TabFiveScreen}
+        options={{ headerShown: false }}
+      />
+    </TabFiveStack.Navigator>
   );
 }

@@ -13,17 +13,22 @@ export default {
           },
           TabTwo: {
             screens: {
-              TabTwoScreen: 'fasts',
+              TabTwoScreen: 'annual',
             },
           },
           TabThree: {
             screens: {
-              TabThreeScreen: 'holidays',
+              TabThreeScreen: 'convert',
             },
           },
           TabFour: {
             screens: {
-              TabFourScreen: 'more',
+              TabFourScreen: 'notifications',
+            },
+          },
+          TabFive: {
+            screens: {
+              TabFiveScreen: 'more',
             },
           },
         },

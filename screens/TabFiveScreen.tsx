@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 
 import { View } from '../components/Themed';
 
-export default function TabFourScreen() {
+export default function TabFiveScreen() {
   return (
     <View style={styles.container}>
       
