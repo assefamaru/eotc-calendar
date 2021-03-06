@@ -8,7 +8,7 @@ export default function TabOneScreen(this: any) {
 
   return (
     <ScrollView style={styles.container}>
-      <Text>{Calendar.getFasts(2019)}</Text>
+      
     </ScrollView>
   );
 }
@@ -16,6 +16,6 @@ export default function TabOneScreen(this: any) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    borderColor: 'red',
+    padding: 100,
   },
 });
